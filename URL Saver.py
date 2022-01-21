@@ -1,6 +1,6 @@
 import tkinter as t
 import webbrowser
-prog_version = "0.1.1"
+prog_version = "0.1.2"
 def_font = "Helvetica"
 #Chrck Button Vars
 #Functions go here
@@ -9,6 +9,10 @@ def temp_command():
     print("THIS IS A TEMP COMMAND!")
     print("PLEASE FIND THE BUTTON USING IT AS IT IS NOT USING IT'S OWN FUNCTION!")
     print(close_browser.get())
+def exit_button():
+    print("\nUpdate: User clicked exit button.\nUpdate: Exiting...", end="")
+    window.destroy()
+    print("Update: Done!")
 print("Info: Hello! Welcome to MrHatman26's URL Saver!\nCurrent Version is: " + prog_version + "\n\nUpdate: Starting GUI")
 resolution = "675x620"
 print("Info: GUI resolution is: " + resolution)
@@ -58,7 +62,7 @@ load_frame_check_frame.pack(side=t.RIGHT)
 load_frame_button_frame.pack(side=t.BOTTOM, pady=10)
 load_frame.pack()
 exit_button_line = t.Label(window, text="-----------------------------------------------------------------------------------------------------------------------------").pack()
-exit_button = t.Button(window, text="Exit", command=temp_command, width=10).pack(pady=(5, 0))
+exit_button = t.Button(window, text="Exit", command=exit_button, width=10).pack(pady=(5, 0))
 
 save_frame_urls.configure(state="disabled")
 window.resizable(False, False)
