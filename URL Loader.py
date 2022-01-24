@@ -1,7 +1,7 @@
 import tkinter as t
 from tkinter import messagebox
 import webbrowser
-prog_version = "0.3.4"
+prog_version = "1.0.0"
 def_font = "Helvetica"
 urls = []
 #Chrck Button Vars
