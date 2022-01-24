@@ -1,3 +1,2 @@
-# MrHatman26-s-URL-Saver
-A program that saves all open URLs to a text file. It also opens all URLs in new tabs for you to allow you to open previous
-broswer sessions more quickly.
+# MrHatman26-s-URL-Loader
+A program that allows you to quickly open multiple URLs from a text file.
