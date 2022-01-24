@@ -3,7 +3,11 @@ import webbrowser
 prog_version = "0.1.2"
 def_font = "Helvetica"
 #Chrck Button Vars
-#Functions go here
+#Regular Functions
+def get_current_urls():
+    print("------>" + str(webbrowser.get()))
+get_current_urls()
+#Functions for buttons
 def temp_command():
     global close_browser
     print("THIS IS A TEMP COMMAND!")
