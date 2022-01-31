@@ -1,5 +1,1 @@
-https://stackoverflow.com/questions/11295917/how-to-select-a-directory-and-store-the-location-using-tkinter-in-python
-https://pythonspot.com/tk-file-dialogs/
-https://stackoverflow.com/questions/4914277/how-to-empty-a-file-using-python/4914288
-https://docs.python.org/3/library/webbrowser.html
-https://steamcommunity.com/app/225540/discussions/0/451848855013020738/
+Put URLs Here!
