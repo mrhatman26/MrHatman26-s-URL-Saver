@@ -1,7 +1,7 @@
 import tkinter as t
 from tkinter import messagebox
 import webbrowser
-prog_version = "1.0.0"
+prog_version = "1.3.2"
 def_font = "Helvetica"
 urls = []
 #Chrck Button Vars
@@ -75,6 +75,11 @@ def temp_command():
     print("THIS IS A TEMP COMMAND!")
     print("PLEASE FIND THE BUTTON USING IT AS IT IS NOT USING IT'S OWN FUNCTION!")
     print(close_browser.get())
+def about_button():
+    print("\nUpdate: User clicked info button.\nUpdate: Showing program information...", end="")
+    mesg = "This program was made by MrHatman26 AKA nobody important.\n\nWhat is this?: This is a simple program to reload closed URLs automatically rather than you doing it by hand. It was intended to have a function to save URLs, but that unfortunately seems impossible.\n\nThis program was made with Python and uses the following libraries: -tkinter -webbrowser\n\nCurrent Version: " + prog_version + "\n\n(Feel free to modify this program as much as you want. No credit is needed)"
+    t.messagebox.showinfo("About", mesg)
+    print("Done!\n\nWaiting for user input...")
 def exit_button():
     print("\nUpdate: User clicked exit button.\nUpdate: Exiting...", end="")
     window.destroy()
@@ -92,6 +97,7 @@ open_sep_win = t.BooleanVar()
 print("Done!\nUpdate: Setting resolution and title...", end="")
 window.geometry(resolution)
 window.title(title)
+window.iconbitmap("Icon.ico")
 print("Done!\nUpdate: Creating GUI widgets...", end="")
 #Load URLs Frame
 load_frame = t.Frame(window)
@@ -112,9 +118,11 @@ load_frame_check_frame.pack(side=t.RIGHT)
 load_frame_button_frame.pack(side=t.BOTTOM, pady=10)
 load_frame.pack()
 exit_button_line = t.Label(window, text="-----------------------------------------------------------------------------------------------------------------------------").pack()
-info_button = t.Button(window, text="Info", command=temp_command, width=10).pack(pady=(5, 0))
+info_button = t.Button(window, text="Info", command=about_button, width=10).pack(pady=(5, 0))
 exit_button = t.Button(window, text="Exit", command=exit_button, width=10).pack(pady=(4, 0))
-
+load_frame_urls_scrollbar = t.Scrollbar(window, command=load_frame_urls.yview, width=15)
+load_frame_urls_scrollbar.place(x=658, y=44, height=164)
+load_frame_urls['yscrollcommand'] = load_frame_urls_scrollbar.set
 load_frame_urls.configure(state="disabled")
 load_frame_button_frame_button['state'] = t.DISABLED
 print("Done!")
