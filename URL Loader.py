@@ -1,7 +1,7 @@
 import tkinter as t
 from tkinter import messagebox
 import webbrowser
-prog_version = "1.3.2"
+prog_version = "1.3.4"
 def_font = "Helvetica"
 urls = []
 #Chrck Button Vars
@@ -47,11 +47,14 @@ def open_urls():
     global urls
     if len(urls) != 0:
         for single_url in urls:
-            try:
-                webbrowser.open(single_url)
-                print("Update: Opened " + single_url)
-            except:
-                print("Update: Failed to open " + single_url)
+            if "https" in single_url or "http" in single_url:
+                try:
+                    webbrowser.open(single_url)
+                    print("Update: Opened " + single_url)
+                except:
+                    print("Update: Failed to open " + single_url)
+            else:
+                print("Update: " + single_url + " is not a URL!")
         if delete_urls.get() is True:
             print("Update: Deleting URLs...", end="")
             urls = []
